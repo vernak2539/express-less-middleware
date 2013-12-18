@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "description": "Compiles LESS on a per request basis",
   "license": "MIT",
-  "author": "",
-  "repository": "",
-  "dependencies": {}
+  "author": "Alex Vernacchia",
+  "repository": "git://github.com/vernak2539/express-less-middleware.git",
+  "dependencies": {
+    "less": "*"
+  }
 }
