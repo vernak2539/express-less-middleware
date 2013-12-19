@@ -2,7 +2,7 @@
 
 This middleware is designed to compile LESS on the fly. **Depends on LESS npm module, obviously.**
 
-##Installing
+###Installing
 
 ```js
 npm install --save express-less-middleware
