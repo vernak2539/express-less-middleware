@@ -31,7 +31,7 @@ npm install --save express-less-middleware
 var http         = require( 'http' );
 var express      = require( 'express' );
 var app          = express();
-var lessCompiler = require( './path/to/middleware' );
+var lessCompiler = require( 'express-less-middleware' );
 
 // everything else that has to do with configuring
 
