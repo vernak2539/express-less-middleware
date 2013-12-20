@@ -5,7 +5,7 @@ This middleware is designed to compile LESS on the fly. **Depends on LESS npm mo
 ###Installing
 
 ```js
-npm install --save express-less-middleware
+npm install express-less-middleware --save
 ```
 
 **Should only be used for development. LESS should be compiled during a build process**
@@ -31,9 +31,17 @@ npm install --save express-less-middleware
 var http         = require( 'http' );
 var express      = require( 'express' );
 var app          = express();
-var lessCompiler = require( 'express-less-middleware' );
 
-// everything else that has to do with configuring
+// this assumes that the publicly available folder is on the same directory level
+// as the file that starts your express server
+var lessCompiler = require( 'express-less-middleware' )();
+
+// if that's not the case, initialize it with the path to your public/client-side folder
+// the path should be relative to the directory where the file that starts your express server is
+// ex) var lessCompiler = require( 'express-less-middleware' )( '../path/to/public/folder' );
+
+
+// ....everything else that has to do with configuring
 
 // you should only use this when developing. Not meant for production
 app.configure( 'dev', function() {
@@ -41,7 +49,7 @@ app.configure( 'dev', function() {
 	app.use( lessCompiler );
 });
 
-// other stuff relative to your express app
+// ....other stuff relative to your express app
 
 http.createServer( app ).listen( 8000 );
 ```
