@@ -1,10 +1,16 @@
 {
   "name": "express-less-middleware",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Compiles LESS on a per request basis in Express",
   "main": "./lib/less-middleware",
   "license": "MIT",
-  "author": "Alex Vernacchia",
+  "author": "Alex Vernacchia <alvernacchia@gmail.com>",
+  "contributors": [ 
+    {
+      "name": "Jeremy Gerrits",
+      "email": "danjersoftware@gmail.com"
+    } 
+  ],
   "repository": "git://github.com/vernak2539/express-less-middleware.git",
   "dependencies": {
     "less": "~1.5.1"
