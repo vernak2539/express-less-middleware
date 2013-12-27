@@ -1,6 +1,6 @@
-##Express LESS Middleware
+##Express LESS Middleware [![Build Status](https://travis-ci.org/vernak2539/express-less-middleware.png?branch=master)](https://travis-ci.org/vernak2539/express-less-middleware)
 
-This middleware is designed to compile LESS on the fly. [![Build Status](https://travis-ci.org/vernak2539/express-less-middleware.png?branch=master)](https://travis-ci.org/vernak2539/express-less-middleware)
+This middleware is designed to compile LESS on the fly.
 
 ###Installing
 
