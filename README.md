@@ -1,6 +1,6 @@
 ##Express LESS Middleware
 
-This middleware is designed to compile LESS on the fly. **Depends on LESS npm module, obviously.**
+This middleware is designed to compile LESS on the fly.
 
 ###Installing
 
