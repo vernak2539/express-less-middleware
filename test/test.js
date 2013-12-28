@@ -86,6 +86,7 @@ describe('less-middleware', function() {
 			sinon.stub(fs, 'readFile', function(path, enc, cb) {
 				cb('this is an error message', null);
 			});
+			sinon.stub(console, 'log').returns( true );
 
 			var classUnderTest = require('../lib/less-middleware')('path');
 
@@ -94,6 +95,7 @@ describe('less-middleware', function() {
 			assert(next.calledOnce);
 			fs.exists.restore();
 			fs.readFile.restore();
+			console.log.restore();
 		});
 		it('is unable to parse less file', function() {
 			var req = {
@@ -118,6 +120,7 @@ describe('less-middleware', function() {
 					}
 				}
 			});
+			sinon.stub( console, 'log' ).returns( true );
 
 			var classUnderTest = require('../lib/less-middleware')('path');
 
@@ -130,6 +133,7 @@ describe('less-middleware', function() {
 			fs.exists.restore();
 			fs.readFile.restore();
 			less.Parser.restore();
+			console.log.restore();
 		});
 		it('is sent a valid less file that is successfully parsed and css is returned', function() {
 			var req = {
