@@ -5,21 +5,24 @@
   "main": "./lib/less-middleware",
   "license": "MIT",
   "author": "Alex Vernacchia <alvernacchia@gmail.com>",
-  "contributors": [ 
+  "contributors": [
     {
       "name": "Jeremy Gerrits",
       "email": "danjersoftware@gmail.com"
-    } 
+    }
   ],
   "repository": "git://github.com/vernak2539/express-less-middleware.git",
   "dependencies": {
     "less": "~1.5.1"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "istanbul cover _mocha --report lcovonly -- test/*.js --reporter list --timeout 100000 && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "devDependencies": {
     "mocha": "~1.15.1",
-    "sinon": "~1.7.3"
+    "sinon": "~1.7.3",
+    "mocha-lcov-reporter": "0.0.1",
+    "coveralls": "~2.6.1",
+    "istanbul": "~0.2.3"
   }
 }
