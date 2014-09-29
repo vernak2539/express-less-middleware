@@ -1,1 +1,4 @@
 .travis.yml
+.gitignore
+test/
+coverage/
