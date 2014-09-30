@@ -20,13 +20,16 @@
     "test": "istanbul cover _mocha --report lcovonly -- test/spec.js --reporter list --timeout 100000 && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "devDependencies": {
-    "mocha": "~1.15.1",
-    "sinon": "~1.7.3",
-    "mocha-lcov-reporter": "0.0.1",
     "coveralls": "~2.6.1",
-    "istanbul": "~0.2.3",
-    "resumer": "0.0.0",
     "express": "~4.9.5",
+    "gulp": "~3.8.8",
+    "gulp-complexity": "~0.3.0",
+    "gulp-jshint": "~1.8.5",
+    "gulp-mocha": "~1.1.0",
+    "istanbul": "~0.2.3",
+    "jshint-stylish": "~1.0.0",
+    "mocha": "~1.15.1",
+    "mocha-lcov-reporter": "0.0.1",
     "supertest": "~0.14.0"
   }
 }
