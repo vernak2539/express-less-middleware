@@ -21,11 +21,9 @@
   },
   "devDependencies": {
     "mocha": "~1.15.1",
-    "sinon": "~1.7.3",
     "mocha-lcov-reporter": "0.0.1",
     "coveralls": "~2.6.1",
     "istanbul": "~0.2.3",
-    "resumer": "0.0.0",
     "express": "~4.9.5",
     "supertest": "~0.14.0"
   }
