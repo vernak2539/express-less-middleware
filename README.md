@@ -32,9 +32,13 @@ npm install --save express-less-middleware
   * required: no
   * default: `./public` (string)
   * Type: `String` or `Object`
-    * `String` - will be path to express public directory. Will use path.join with `process.cwd()` as first argument
+    * `String` - will be path to express public directory.__*__
     * `Object` - [less parser options][1]
       * `options.publicDir` - same value as if `options` were a string. Same default value
+      * `options.paths`__*__
+
+
+\* **paths should be relative to cwd.** `path.join` is used with `process.cwd()` as first argument when processing all paths
 
 ###Example
 
