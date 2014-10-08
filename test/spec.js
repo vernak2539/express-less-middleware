@@ -3,12 +3,30 @@
 var request = require( 'supertest' );
 var assert  = require( 'assert' );
 
-var app = require( './sample-server' );
+var app             = require( './sample-server' ).stringServer;
+var appObjectConfig = require( './sample-server' ).objServer;
 
 describe( 'Express LESS Middleware', function() {
 
 	it( 'should deliver compiled LESS file', function( done ) {
 		request( app )
+			.get( '/css-files/sample-less.css' )
+			.expect( 'Content-Type', 'text/css; charset=utf-8' )
+			.expect( 200 )
+			.end( function( err, res ) {
+				if( err ) {
+					done( err );
+				}
+
+				var result = compressResult( res.text );
+
+				assert.equal( result, '.test .test-inside { color: white;}' );
+				done();
+			});
+	});
+
+	it( 'should deliver compiled LESS file when configured with object as options', function( done ) {
+		request( appObjectConfig )
 			.get( '/css-files/sample-less.css' )
 			.expect( 'Content-Type', 'text/css; charset=utf-8' )
 			.expect( 200 )
