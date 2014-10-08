@@ -21,7 +21,7 @@ gulp.task( 'jshint', function() {
 });
 
 gulp.task( 'complexity', function() {
-	return gulp.src( paths.lib )
+	return gulp.src( [ paths.lib, '!./lib/helpers.js' ] )
 		.pipe( complexity({
 			cyclomatic: 10 // recommendation 10
 			, halstead: 12 // no recommendation
