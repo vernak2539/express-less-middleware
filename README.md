@@ -5,7 +5,7 @@ This middleware is designed to compile LESS on the fly.
 ###Installing
 
 ```js
-npm install express-less-middleware --save
+npm install --save express-less-middleware
 ```
 
 **Should only be used for development. LESS should be compiled during a build process**
@@ -25,12 +25,23 @@ npm install express-less-middleware --save
 
 1. Look for changes on save (if you use it, you won't need a grunt watch on less files)
 
+###Setup
+
+**lessMiddleware( options )**
+* `options`
+  * required: no
+  * default: `./public` (string)
+  * Type: `String` or `Object`
+    * `String` - will be path to express public directory. Will use path.join with `process.cwd()` as first argument
+    * `Object` - [less parser options][1]
+      * `options.publicDir` - same value as if `options` were a string. Same default value
+
 ###Example
 
 ```js
-var http         = require( 'http' );
-var express      = require( 'express' );
-var app          = express();
+var http    = require( 'http' );
+var express = require( 'express' );
+var app     = express();
 
 // this assumes that the publicly available folder is on the same directory level
 // as the file that starts your express server
@@ -38,16 +49,21 @@ var lessCompiler = require( 'express-less-middleware' )();
 
 // if that's not the case, initialize it with the path to your public/client-side folder
 // the path should be relative to the directory where the file that starts your express server is
-// ex) var lessCompiler = require( 'express-less-middleware' )( '../path/to/public/folder' );
-
+// Example below.
+//
+//    var lessCompiler = require( 'express-less-middleware' );
+//    lessCompiler     = lessCompiler( '../path/to/public/folder' );
+// OR
+//    var lessCompiler = require( 'express-less-middleware' );
+//    lessCompiler     = lessCompiler({ publicDir: '../path/to/public/folder', ... });
 
 // ....everything else that has to do with configuring
 
 // you should only use this when developing. Not meant for production
-app.configure( 'dev', function() {
-	// this must be "used" before express.use( express.static() ) or it will not work (no next())
-	app.use( lessCompiler );
-});
+if( process.env.NODE_ENV === 'dev' ) {
+  // this must be "used" before express.use( express.static() ) or it will not work (no next())
+  app.use( lessCompiler );
+}
 
 // ....other stuff relative to your express app
 
@@ -57,3 +73,5 @@ http.createServer( app ).listen( 8000 );
 ####License
 
 MIT
+
+[1]: https://www.npmjs.org/package/less
