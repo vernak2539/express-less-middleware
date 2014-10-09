@@ -3,13 +3,32 @@
 var request = require( 'supertest' );
 var assert  = require( 'assert' );
 
-var app             = require( './sample-server' ).stringServer;
-var appObjectConfig = require( './sample-server' ).objServer;
+var app             = require( './sample-server' ).configNone;
+var appStringConfig = require( './sample-server' ).configString;
+var appObjectConfig = require( './sample-server' ).configObject;
+
 
 describe( 'Express LESS Middleware', function() {
 
 	it( 'should deliver compiled LESS file', function( done ) {
 		request( app )
+			.get( '/css-files/sample-less.css' )
+			.expect( 'Content-Type', 'text/css; charset=utf-8' )
+			.expect( 200 )
+			.end( function( err, res ) {
+				if( err ) {
+					done( err );
+				}
+
+				var result = compressResult( res.text );
+
+				assert.equal( result, '.test .test-inside { color: white;}' );
+				done();
+			});
+	});
+
+	it( 'should deliver compiled LESS file when configured with string as options', function( done ) {
+		request( appStringConfig )
 			.get( '/css-files/sample-less.css' )
 			.expect( 'Content-Type', 'text/css; charset=utf-8' )
 			.expect( 200 )
@@ -57,7 +76,7 @@ describe( 'Express LESS Middleware', function() {
 			});
 	});
 
-	it( 'should not deliver compild LESS on POST requests', function( done ) {
+	it( 'should not deliver compiled LESS on POST requests', function( done ) {
 		request( app )
 			.post( '/css-files/sample-less.css' )
 			.expect( 200 )
