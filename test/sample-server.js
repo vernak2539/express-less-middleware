@@ -1,8 +1,8 @@
 'use strict';
 
 var express  = require( 'express' );
-var lcString = require('../lib/less-middleware')('./test');
-var lcObj    = require('../lib/less-middleware')({ publicDir: './test', paths: [ './public' ] });
+var lcString = require('../lib/less-middleware')();
+var lcObj    = require('../lib/less-middleware')({ publicDir: './public', paths: [ './test' ] });
 
 var objConfig    = express();
 var stringConfig = express();
