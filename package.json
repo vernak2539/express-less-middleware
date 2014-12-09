@@ -11,6 +11,13 @@
       "email": "danjersoftware@gmail.com"
     }
   ],
+  "keywords": [
+    "express",
+    "expressjs",
+    "less",
+    "middleware",
+    "parser"
+  ],
   "repository": "git://github.com/vernak2539/express-less-middleware.git",
   "dependencies": {
     "less": "~1.7.5",
