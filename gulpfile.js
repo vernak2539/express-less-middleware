@@ -17,7 +17,8 @@ gulp.task( 'test', [ 'jshint', 'complexity', 'mocha' ] );
 gulp.task( 'jshint', function() {
 	return gulp.src([ paths.lib, paths.gulp ])
 		.pipe( jshint() )
-		.pipe( jshint.reporter( 'jshint-stylish' ) );
+		.pipe( jshint.reporter( 'jshint-stylish' ) )
+		.pipe( jshint.reporter( 'fail' ) );
 });
 
 gulp.task( 'complexity', function() {
