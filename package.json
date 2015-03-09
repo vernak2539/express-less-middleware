@@ -21,24 +21,24 @@
   "repository": "git://github.com/vernak2539/express-less-middleware.git",
   "dependencies": {
     "async": "~0.9.0",
-    "less": "~1.7.5",
-    "lodash.isplainobject": "~2.4.1",
-    "through2": "~0.6.2"
+    "less": "~2.4.0",
+    "lodash.isplainobject": "~3.0.0",
+    "through2": "~0.6.3"
   },
   "scripts": {
     "test": "istanbul cover _mocha --report lcovonly -- test/spec.js --reporter list --timeout 100000 && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
   },
   "devDependencies": {
-    "coveralls": "~2.6.1",
-    "express": "~4.9.5",
-    "gulp": "~3.8.8",
+    "coveralls": "~2.11.2",
+    "express": "~4.12.2",
     "gulp-complexity": "~0.3.0",
-    "gulp-jshint": "~1.8.5",
-    "gulp-mocha": "~1.1.0",
-    "istanbul": "~0.2.3",
-    "jshint-stylish": "~1.0.0",
-    "mocha": "~1.15.1",
-    "mocha-lcov-reporter": "0.0.1",
-    "supertest": "~0.14.0"
+    "gulp-jshint": "~1.9.2",
+    "gulp-mocha": "~2.0.0",
+    "gulp": "~3.8.8",
+    "istanbul": "~0.3.7",
+    "jshint-stylish": "~1.0.1",
+    "mocha-lcov-reporter": "~0.0.2",
+    "mocha": "~2.2.1",
+    "supertest": "~0.15.0"
   }
 }
