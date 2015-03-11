@@ -31,14 +31,17 @@
   "devDependencies": {
     "coveralls": "~2.11.2",
     "express": "~4.12.2",
+    "gulp": "~3.8.8",
+    "gulp-bump": "~0.2.2",
     "gulp-complexity": "~0.3.0",
+    "gulp-git": "~1.1.0",
     "gulp-jshint": "~1.9.2",
     "gulp-mocha": "~2.0.0",
-    "gulp": "~3.8.8",
     "istanbul": "~0.3.7",
     "jshint-stylish": "~1.0.1",
-    "mocha-lcov-reporter": "~0.0.2",
     "mocha": "~2.2.1",
+    "mocha-lcov-reporter": "~0.0.2",
+    "run-sequence": "~1.0.2",
     "supertest": "~0.15.0"
   }
 }

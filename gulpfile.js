@@ -1,9 +1,12 @@
 'use strict';
 
+var bump       = require( 'gulp-bump' );
+var complexity = require( 'gulp-complexity' );
+var git        = require( 'gulp-git' );
 var gulp       = require( 'gulp' );
 var jshint     = require( 'gulp-jshint' );
-var complexity = require( 'gulp-complexity' );
 var mocha      = require( 'gulp-mocha' );
+var sequence   = require( 'run-sequence' );
 
 var paths = {
 	lib: './lib/**/*.js'
@@ -11,7 +14,14 @@ var paths = {
 	, testSpec: './test/spec.js'
 };
 
-gulp.task( 'default', [ 'test' ] );
+gulp.task( 'default', function(cb) {
+	sequence('test', 'dist', cb);
+});
+
+gulp.task('dist', function(cb) {
+	sequence('bump', 'tag', cb);
+});
+
 gulp.task( 'test', [ 'jshint', 'complexity', 'mocha' ] );
 
 gulp.task( 'jshint', function() {
@@ -36,4 +46,21 @@ gulp.task( 'mocha', [ 'jshint', 'complexity' ], function() {
 		.pipe( mocha({
 			reporter: 'spec'
 		}) );
+});
+
+gulp.task('bump', function() {
+	return gulp.src('./package.json')
+		.pipe(bump())
+		.pipe(gulp.dest('./'));
+});
+
+gulp.task('tag', function() {
+	var version = require('./package.json').version;
+	var message = 'Release ' + version;
+
+	return gulp.src('./*')
+		.pipe(git.commit(message))
+		.pipe(git.tag(version))
+		// .pipe(git.push('origin', 'master', '--tags'))
+		// .pipe(gulp.dest('./'));
 });
