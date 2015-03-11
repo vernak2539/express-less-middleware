@@ -1,4 +1,4 @@
-##Express LESS Middleware [![Build Status](https://travis-ci.org/vernak2539/express-less-middleware.svg?branch=master)](https://travis-ci.org/vernak2539/express-less-middleware) [![Coverage Status](https://coveralls.io/repos/vernak2539/express-less-middleware/badge.svg?branch=coveralls_support)](https://coveralls.io/r/vernak2539/express-less-middleware?branch=master) ![Dependencies](https://david-dm.org/vernak2539/express-less-middleware.svg)
+##Express LESS Middleware [![Build Status](https://travis-ci.org/vernak2539/express-less-middleware.svg?branch=master)](https://travis-ci.org/vernak2539/express-less-middleware) [![Coverage Status](https://coveralls.io/repos/vernak2539/express-less-middleware/badge.svg?branch=coveralls_support)](https://coveralls.io/r/vernak2539/express-less-middleware?branch=master) [![Dependencies](https://david-dm.org/vernak2539/express-less-middleware.svg)](https://david-dm.org/vernak2539/express-less-middleware)
 
 This middleware is designed to compile LESS on the fly.
 
