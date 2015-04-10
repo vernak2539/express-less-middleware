@@ -1,8 +1,11 @@
-##Express LESS Middleware [![Build Status](https://travis-ci.org/vernak2539/express-less-middleware.svg?branch=master)](https://travis-ci.org/vernak2539/express-less-middleware) [![Coverage Status](https://coveralls.io/repos/vernak2539/express-less-middleware/badge.svg?branch=coveralls_support)](https://coveralls.io/r/vernak2539/express-less-middleware?branch=master) [![Dependencies](https://david-dm.org/vernak2539/express-less-middleware.svg)](https://david-dm.org/vernak2539/express-less-middleware)
+
+## Express LESS Middleware [![Build Status](https://travis-ci.org/vernak2539/express-less-middleware.svg?branch=master)](https://travis-ci.org/vernak2539/express-less-middleware) [![Coverage Status](https://coveralls.io/repos/vernak2539/express-less-middleware/badge.svg?branch=coveralls_support)](https://coveralls.io/r/vernak2539/express-less-middleware?branch=master) [![Dependencies](https://david-dm.org/vernak2539/express-less-middleware.svg)](https://david-dm.org/vernak2539/express-less-middleware)
 
 This middleware is designed to compile LESS on the fly.
 
-###Installing
+[![NPM](https://nodei.co/npm/express-less-middleware.png?downloads=true)](https://nodei.co/npm/express-less-middleware/)
+
+### Installing
 
 ```js
 npm install --save express-less-middleware
@@ -10,7 +13,7 @@ npm install --save express-less-middleware
 
 **Should only be used for development. LESS should be compiled during a build process**
 
-###What this does (per request)
+### What this does (per request)
 
 1. Determines if file requested is: (if conditions aren't met it runs `next()`)
     1. requested via GET method
@@ -21,11 +24,11 @@ npm install --save express-less-middleware
     * if LESS file is found it will read that file and compile it to CSS and deliever the response
 4. If no LESS or CSS file is found, it will give you a 404 like usual
 
-###What this doesn't do
+### What this doesn't do
 
 1. Look for changes on save (if you use it, you won't need a grunt watch on less files)
 
-###Setup
+### Setup
 
 **lessMiddleware( options )**
 * `options`
@@ -40,7 +43,7 @@ npm install --save express-less-middleware
 
 \* **paths should be relative to cwd.** `path.join` is used with `process.cwd()` as first argument when processing all paths
 
-###Example
+### Example
 
 ```js
 var http    = require( 'http' );
@@ -74,7 +77,7 @@ if( process.env.NODE_ENV === 'dev' ) {
 http.createServer( app ).listen( 8000 );
 ```
 
-####License
+#### License
 
 MIT
 
