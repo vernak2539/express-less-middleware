@@ -25,7 +25,7 @@ appNoConfig.get( '/css-files/sample.css', function( req, res ) {
 
 appNoConfig.get( '/css-files/less-does-not-exist.css', function( req, res ) {
 	res.status( 404 ).end();
-})
+});
 
 appNoConfig.post( '/css-files/sample-less.css', function( req, res ) {
 	res.status( 200 ).end();

@@ -7,6 +7,19 @@ var app             = require( './sample-server' ).configNone;
 var appStringConfig = require( './sample-server' ).configString;
 var appObjectConfig = require( './sample-server' ).configObject;
 
+var assertCompiled = function(done) {
+	return function(err, res) {
+		if( err ) {
+			done( err );
+		}
+
+		var result = compressResult( res.text );
+
+		assert.equal( result, '.test .test-inside { color: white;}' );
+		done();
+	};
+};
+
 
 describe( 'Express LESS Middleware', function() {
 
@@ -15,16 +28,7 @@ describe( 'Express LESS Middleware', function() {
 			.get( '/css-files/sample-less.css' )
 			.expect( 'Content-Type', 'text/css; charset=utf-8' )
 			.expect( 200 )
-			.end( function( err, res ) {
-				if( err ) {
-					done( err );
-				}
-
-				var result = compressResult( res.text );
-
-				assert.equal( result, '.test .test-inside { color: white;}' );
-				done();
-			});
+			.end(assertCompiled(done));
 	});
 
 	it( 'should deliver compiled LESS file when configured with string as options', function( done ) {
@@ -32,16 +36,7 @@ describe( 'Express LESS Middleware', function() {
 			.get( '/css-files/sample-less.css' )
 			.expect( 'Content-Type', 'text/css; charset=utf-8' )
 			.expect( 200 )
-			.end( function( err, res ) {
-				if( err ) {
-					done( err );
-				}
-
-				var result = compressResult( res.text );
-
-				assert.equal( result, '.test .test-inside { color: white;}' );
-				done();
-			});
+			.end(assertCompiled(done));
 	});
 
 	it( 'should deliver compiled LESS file when configured with object as options', function( done ) {
@@ -49,16 +44,7 @@ describe( 'Express LESS Middleware', function() {
 			.get( '/css-files/sample-less.css' )
 			.expect( 'Content-Type', 'text/css; charset=utf-8' )
 			.expect( 200 )
-			.end( function( err, res ) {
-				if( err ) {
-					done( err );
-				}
-
-				var result = compressResult( res.text );
-
-				assert.equal( result, '.test .test-inside { color: white;}' );
-				done();
-			});
+			.end(assertCompiled(done));
 	});
 
 	it( 'should deliver parse error', function( done ) {
@@ -66,10 +52,10 @@ describe( 'Express LESS Middleware', function() {
 			.get( '/css-files/parse-error.css' )
 			.end( function( err, res ) {
 				if( err ) {
-					done( err )
+					done( err );
 				}
 
-				var expectedResult = !!res.text.match( /^express\-less\-middleware\:/ )
+				var expectedResult = !!res.text.match( /^express\-less\-middleware\:/ );
 
 				assert( expectedResult, true );
 				done();
