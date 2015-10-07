@@ -9,13 +9,14 @@ var paths = {
 	lib: './lib/**/*.js'
 	, gulp: './gulpfile.js'
 	, testSpec: './test/spec.js'
+	, tests: './test/**/*.js'
 };
 
 gulp.task( 'default', [ 'test' ] );
 gulp.task( 'test', [ 'jshint', 'complexity', 'mocha' ] );
 
 gulp.task( 'jshint', function() {
-	return gulp.src([ paths.lib, paths.gulp ])
+	return gulp.src([ paths.lib, paths.gulp, paths.tests ])
 		.pipe( jshint() )
 		.pipe( jshint.reporter( 'jshint-stylish' ) )
 		.pipe( jshint.reporter( 'fail' ) );
