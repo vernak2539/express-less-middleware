@@ -20,9 +20,9 @@
   ],
   "repository": "git://github.com/vernak2539/express-less-middleware.git",
   "dependencies": {
-    "async": "~1.4.1",
-    "less": "~2.5.0",
-    "lodash.isplainobject": "~3.2.0",
+    "async": "~1.5.2",
+    "less": "~2.7.1",
+    "lodash.isplainobject": "~4.0.0",
     "through2": "~2.0.0"
   },
   "scripts": {
