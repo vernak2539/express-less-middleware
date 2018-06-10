@@ -4,4 +4,3 @@ coverage/
 .idea
 *.tgz
 *.log
-package-lock.json
