@@ -1,17 +1,13 @@
 language: node_js
 node_js:
-  - "0.8"
-  - "0.10"
-  - "0.12"
-  - "4"
-  - "4.1"
-  - "5"
-  - "stable"
-  - "iojs"
+- '8'
+- '6'
+- '10'
+- stable
 sudo: false
-before_install: "test $TRAVIS_NODE_VERSION = '0.8' && npm install -g npm@1.2.8000 || true"
-install: "test $TRAVIS_NODE_VERSION = '0.8' && npm install --production && npm install coveralls@~2.6.1 express@~4.9.5 istanbul@~0.2.3 mocha@~1.15.1 mocha-lcov-reporter@0.0.1 supertest@~0.14.0 || npm install"
-before_script:
-  - "export DISPLAY=:99.0"
-  - "sh -e /etc/init.d/xvfb start"
-  - export NODE_PATH="$NVM_PATH/../node_modules"
+before_install: yarn global add greenkeeper-lockfile@1
+before_script: greenkeeper-lockfile-update
+after_script: greenkeeper-lockfile-upload
+env:
+  global:
+    secure: vBpQ3YFygIwLhfRKjCgqrVhEXK89VOh7ihd8dpnB2oHdnQEGrXAOrsKHugtH6AzV3/ng6XmnL5f4jFtHxUySfeCD+xrS7cF0D6g75iTigjCJZ6vmjjoRlo9Iv9XJklUdMiNah7EfGJFafSJ9B2YfReHaUmEz43mkPB22wQ46c8Q=

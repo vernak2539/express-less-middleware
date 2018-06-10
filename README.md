@@ -3,7 +3,7 @@
 
 This middleware is designed to compile LESS on the fly.
 
-[![NPM](https://nodei.co/npm/express-less-middleware.png?downloads=true)](https://nodei.co/npm/express-less-middleware/)
+[![NPM](https://nodei.co/npm/express-less-middleware.png?downloads=true)](https://nodei.co/npm/express-less-middleware/) [![Greenkeeper badge](https://badges.greenkeeper.io/vernak2539/express-less-middleware.svg)](https://greenkeeper.io/)
 
 ### Installing
 
