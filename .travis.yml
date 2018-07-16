@@ -10,4 +10,4 @@ before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
 env:
   global:
-    secure: vBpQ3YFygIwLhfRKjCgqrVhEXK89VOh7ihd8dpnB2oHdnQEGrXAOrsKHugtH6AzV3/ng6XmnL5f4jFtHxUySfeCD+xrS7cF0D6g75iTigjCJZ6vmjjoRlo9Iv9XJklUdMiNah7EfGJFafSJ9B2YfReHaUmEz43mkPB22wQ46c8Q=
+    secure: MhpuEOyfupCN5cw1oNj0UjkiqTlhqpCUKwNrXey+NCx5Y1dNTI5kbTY4SSgbOwLhRT8CGlRGoaZY+j1g9NLwsp4TFljGngXaXAno+uJanU4GP8eyVsvFzpe1rf4fbgKmedNIfXbiZzZlP9bDGVMpD3PDDvWsrnXUbi8JmPP7jbs=
