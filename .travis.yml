@@ -5,7 +5,9 @@ node_js:
 - '10'
 - stable
 sudo: false
-before_install: yarn global add greenkeeper-lockfile@1
+before_install:
+  - export PATH=$PATH:`yarn global bin`
+  - yarn global add greenkeeper-lockfile@1
 before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
 env:
