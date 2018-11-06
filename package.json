@@ -23,7 +23,7 @@
     "async": "~2.6.1",
     "less": "~3.8.0",
     "lodash.isplainobject": "~4.0.0",
-    "through2": "~2.0.0"
+    "through2": "~3.0.0"
   },
   "scripts": {
     "test:local": "mocha --reporter=spec --watch",
