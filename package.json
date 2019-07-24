@@ -11,6 +11,9 @@
       "email": "danjersoftware@gmail.com"
     }
   ],
+  "engines": {
+    "node": ">=10 <12"
+  },
   "keywords": [
     "express",
     "expressjs",

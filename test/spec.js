@@ -7,21 +7,18 @@ const app = require("./sample-server").configNone;
 const appStringConfig = require("./sample-server").configString;
 const appObjectConfig = require("./sample-server").configObject;
 
-const compressResult = result => {
-  return result.replace(/\n/g, "").replace(/\s{2,}/g, " ");
-};
+const compressResult = result =>
+  result.replace(/\n/g, "").replace(/\s{2,}/g, " ");
 
-const assertCompiled = done => {
-  return (err, res) => {
-    if (err) {
-      done(err);
-    }
+const assertCompiled = done => (err, res) => {
+  if (err) {
+    done(err);
+  }
 
-    var result = compressResult(res.text);
+  const result = compressResult(res.text);
 
-    assert.equal(result, ".test .test-inside { color: white;}");
-    done();
-  };
+  assert.equal(result, ".test .test-inside { color: white;}");
+  done();
 };
 
 describe("Express LESS Middleware", () => {
@@ -57,7 +54,7 @@ describe("Express LESS Middleware", () => {
           done(err);
         }
 
-        var expectedResult = !!res.text.match(/^express\-less\-middleware\:/);
+        const expectedResult = !!res.text.match(/^express\-less\-middleware\:/);
 
         assert(expectedResult, true);
         done();
