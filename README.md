@@ -35,32 +35,32 @@ npm install --save express-less-middleware
   - required: no
   - default: `./public` (string)
   - Type: `String` or `Object`
-    - `String` - will be path to express public directory.**\***
+    - `String` - will be path to express public directory.__*__
     - `Object` - [less parser options][1]
       - `options.publicDir` - same value as if `options` were a string. Same default value
-      - `options.paths`**\***
+      - `options.paths`__*__
 
 \* **paths should be relative to cwd.** `path.join` is used with `process.cwd()` as first argument when processing all paths
 
 ### Example
 
 ```js
-var http = require("http");
-var express = require("express");
-var app = express();
+const http = require("http");
+const express = require("express");
+const app = express();
 
 // this assumes that the publicly available folder is on the same directory level
 // as the file that starts your express server
-var lessCompiler = require("express-less-middleware")();
+const lessCompiler = require("express-less-middleware")();
 
 // if that's not the case, initialize it with the path to your public/client-side folder
 // the path should be relative to the directory where the file that starts your express server is
 // Example below.
 //
-//    var lessCompiler = require( 'express-less-middleware' );
+//    const lessCompiler = require( 'express-less-middleware' );
 //    lessCompiler     = lessCompiler( '../path/to/public/folder' );
 // OR
-//    var lessCompiler = require( 'express-less-middleware' );
+//    const lessCompiler = require( 'express-less-middleware' );
 //    lessCompiler     = lessCompiler({ publicDir: '../path/to/public/folder', ... });
 
 // ....everything else that has to do with configuring
