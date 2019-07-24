@@ -37,8 +37,6 @@
   "devDependencies": {
     "coveralls": "~3.0.1",
     "express": "~4.17.0",
-    "gulp": "~4.0.2",
-    "gulp-mocha": "~6.0.0",
     "istanbul": "~0.4.5",
     "jshint": "^2.10.2",
     "mocha": "~6.2.0",
