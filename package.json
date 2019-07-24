@@ -36,7 +36,6 @@
     "coveralls": "~3.0.1",
     "express": "~4.17.0",
     "gulp": "~4.0.2",
-    "gulp-complexity": "~0.3.0",
     "gulp-jshint": "~2.1.0",
     "gulp-mocha": "~6.0.0",
     "istanbul": "~0.4.5",
