@@ -1,4 +1,5 @@
 {
+  "esversion": 6,
   "devel": true,
   "browser": false,
   "node": true,
@@ -12,7 +13,7 @@
   "newcap": true,
   "undef": true,
   "shadow": false,
-  "strict": true,
+  "strict": false,
   "unused": true,
   "globals": {
     "describe": true,
