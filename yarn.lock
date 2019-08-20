@@ -1103,10 +1103,10 @@ lcov-parse@^0.0.10:
   resolved "https://registry.yarnpkg.com/lcov-parse/-/lcov-parse-0.0.10.tgz#1b0b8ff9ac9c7889250582b70b71315d9da6d9a3"
   integrity sha1-GwuP+ayceIklBYK3C3ExXZ2m2aM=
 
-less@~3.9.0:
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/less/-/less-3.9.0.tgz#b7511c43f37cf57dc87dffd9883ec121289b1474"
-  integrity sha512-31CmtPEZraNUtuUREYjSqRkeETFdyEHSEPAGq4erDlUXtda7pzNmctdljdIagSb589d/qXGWiiP31R5JVf+v0w==
+less@~3.10.0:
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/less/-/less-3.10.0.tgz#1150f727651908516fd4b47133a8469b29b6c5ce"
+  integrity sha512-+QCSP4vXVCXVqYSzqdT4eLoEK/hSFxFfD29E71+cRFKdLsCDMQ56yEU+fmpHebhmznA/9g9oXtvXN9foCOeIjg==
   dependencies:
     clone "^2.1.2"
   optionalDependencies:
